@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>theurg1st | Security Research</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: #9f9f9f;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #0d0d0d, #121212, #0a0a0a);
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, #fff, #777);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .hero p {
+      color: #bfbfbf;
+      font-size: 1.1rem;
+      animation: fadeIn 2.5s ease forwards;
+    }
+
+    .hero button {
+      margin-top: 40px;
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 14px 36px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.25s ease;
+    }
+
+    .hero button:hover {
+      background: #cfcfcf;
+    }
+
+    section {
+      padding: 100px 15%;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-left: 3px solid #fff;
+      padding-left: 15px;
+    }
+
+    .hacks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .hack {
+      flex: 1 1 300px;
+      background: #111;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #222;
+      transition: 0.3s ease;
+    }
+
+    .hack:hover {
+      transform: translateY(-5px);
+      border-color: #fff;
+    }
+
+    .hack h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .hack p {
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+
+    .status.critical {
+      background: #ff4444;
+      color: white;
+    }
+
+    .status.fixed {
+      background: #44ff44;
+      color: black;
+    }
+
+    .disclaimer {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      border-left: 4px solid #ff4444;
+      margin-top: 40px;
+    }
+
+    footer {
+      background: #0a0a0a;
+      padding: 50px 10%;
+      text-align: center;
+      border-top: 1px solid #1a1a1a;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 25px;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      section {
+        padding: 80px 8%;
+      }
+
+      .hacks {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">theurg1st</div>
+    <nav>
+      <a href="#research">Security Research</a>
+      <a href="#disclosure">Disclosure</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>SECURITY RESEARCH</h1>
+    <p>Ethical Hacking • Vulnerability Assessment • Responsible Disclosure</p>
+    <button onclick="scrollToSection('research')">View Findings</button>
+  </div>
+
+  <section id="research">
+    <h2 class="section-title">Security Assessments</h2>
+    <div class="hacks">
+      <div class="hack">
+        <h3>Bux Messenger Security Breach</h3>
+        <p><strong>Target:</strong> https://buxx.myarena.site/</p>
+        <p><strong>Date:</strong> October 13, 2025</p>
+        <p><strong>Findings:</strong> Fundamental security flaws allowed complete control over the entire platform. Full administrative access achieved.</p>
+        <span class="status critical">COMPLETE BREACH</span>
+      </div>
+
+      <div class="hack">
+        <h3>Total Data Exposure</h3>
+        <p>Gained access to all private conversations, user messages, and personal information.</p>
+        <p>Every message ever sent on the platform was accessible without restrictions.</p>
+        <span class="status critical">ALL DATA COMPROMISED</span>
+      </div>
+
+      <div class="hack">
+        <h3>Full Administrative Control</h3>
+        <p>Complete control over all platform functions: create/delete users, send messages as any user, modify profiles, and change all settings.</p>
+        <p>Could perform any action as any user including administrators.</p>
+        <span class="status critical">TOTAL CONTROL</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="disclosure">
+    <h2 class="section-title">Security Warning</h2>
+    <div class="disclaimer">
+      <h3 style="margin-bottom: 15px;">URGENT SECURITY NOTICE</h3>
+      <p style="color: #ff6b6b; line-height: 1.8;">
+        <strong>Bux Messenger was compromised on October 13, 2025.</strong>
+      </p>
+      <br>
+      <p style="color: #ccc; line-height: 1.8;">
+        The platform has fundamental security flaws that allowed me to gain complete control over the entire system. 
+        I had access to all your private conversations and could do literally anything I wanted - send messages as any user, 
+        delete accounts, modify profiles, and access all data.
+      </p>
+      <br>
+      <p style="color: #ff6b6b; line-height: 1.8;">
+        <strong>ALL USERS ARE NOW AT RISK.</strong> Your data has been exposed and I have access to all your messages.
+      </p>
+      <br>
+      <p style="color: #ccc; line-height: 1.8;">
+        I'm disclosing this to warn you that this messenger is not safe. While I used my access only to demonstrate the vulnerability 
+        (by sending "this site is hacked! go to theurg1st.github.io" messages), others with bad intentions could exploit these same flaws 
+        to steal your data or cause harm.
+      </p>
+      <br>
+      <p style="color: #ccc;">
+        I did not include phishing links or attempt to steal your information : I only wanted to find and demonstrate the security vulnerabilities. 
+        However, you should assume your data on this platform is no longer private.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p style="color:#bbb;">
+      For security research inquiries: <a href="mailto:theurgfirst@gmail.com">theurgfirst@gmail.com</a><br>
+      Discord: theurgfirst
+    </p>
+  </section>
+
+  <footer>
+    © 2025 theurg1st — Security Research & Ethical Hacking
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.style.opacity = 1;
+      });
+    });
+  </script>
+
+</body>
+</html>
